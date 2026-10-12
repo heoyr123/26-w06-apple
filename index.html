@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사과게임 | 10의 배수 챌린지</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="game-header">
+      <div>
+        <h1>사과게임</h1>
+        <p class="subtitle">인접한 숫자를 이어 합을 10의 배수로 만들어보세요.</p>
+      </div>
+      <button class="button button-primary" id="start-button" type="button">게임 시작</button>
+    </header>
+
+    <section class="scoreboard" aria-label="게임 정보">
+      <div class="stat-card stat-score">
+        <span class="stat-label">현재 점수</span>
+        <strong id="score">0</strong>
+      </div>
+      <div class="stat-card stat-best">
+        <span class="stat-label">최고 점수</span>
+        <strong id="best-score">0</strong>
+      </div>
+      <div class="stat-card stat-time">
+        <span class="stat-label">남은 시간</span>
+        <strong><span id="time">60</span><small>초</small></strong>
+      </div>
+    </section>
+
+    <section class="game-panel" aria-labelledby="board-title">
+      <div class="panel-heading">
+        <div>
+          <p class="section-kicker">LIVE BOARD</p>
+          <h2 id="board-title">숫자를 드래그하세요</h2>
+        </div>
+        <p class="selection-readout" aria-live="polite">선택 합계 <strong id="selection-sum">0</strong></p>
+      </div>
+      <div class="board-wrap">
+        <div class="board" id="board" role="grid" aria-label="8 x 8 숫자 게임판"></div>
+        <div class="board-overlay" id="board-overlay" hidden>
+          <p class="overlay-kicker">ROUND COMPLETE</p>
+          <h2>시간이 끝났어요</h2>
+          <p>최종 점수 <strong id="final-score">0</strong></p>
+          <button class="button button-secondary" id="restart-button" type="button">다시 플레이</button>
+        </div>
+      </div>
+      <p class="status-message" id="status-message" aria-live="polite">시작 버튼을 눌러 60초 챌린지를 시작하세요.</p>
+    </section>
+
+    <footer class="game-footer">
+      <span>상하좌우와 대각선으로 이어진 칸을 선택할 수 있어요.</span>
+      <span>합계가 10의 배수면 제거됩니다.</span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
